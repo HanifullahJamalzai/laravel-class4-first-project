@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\WelcomController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +22,6 @@ use Illuminate\Support\Facades\Route;
 //     // return 'about';
 //     // return view('welcome');
 // });
+
+Route::get('welcome', [WelcomController::class, 'index']);
+Route::get('about', [WelcomController::class, 'about']);
