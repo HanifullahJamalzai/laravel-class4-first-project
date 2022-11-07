@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Test;
 class WelcomController extends Controller
 {
     public function index()
@@ -15,10 +15,13 @@ class WelcomController extends Controller
 
     public function about()
     {
-        $var = ['name' => 'Ali', 'lastName' => 'Ramazan'];
+
+        $var = Test::all();
+        // $var = ['name' => 'Ali', 'lastName' => 'Ramazan'];
 
         // return view('about', ['var' => $var]);
         // return view('about', compact('var'));
         return view('about')->with('var', $var);
     }
+
 }
