@@ -28,6 +28,7 @@ Route::get('welcome', [WelcomController::class, 'index']);
 Route::get('about', [WelcomController::class, 'about']);
 
 Route::get('/todo', [App\Http\Controllers\TodoController::class, 'index']);
+Route::post('/todo/store', [App\Http\Controllers\TodoController::class, 'store']);
 
 // View
 // Route
