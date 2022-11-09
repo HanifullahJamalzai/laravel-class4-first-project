@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomController;
+// use App\Http\Controllers\TodoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,12 @@ use App\Http\Controllers\WelcomController;
 
 Route::get('welcome', [WelcomController::class, 'index']);
 Route::get('about', [WelcomController::class, 'about']);
+
+Route::get('/todo', [App\Http\Controllers\TodoController::class, 'index']);
+
+// View
+// Route
+// Controller
+
+// Model
+// Migration
