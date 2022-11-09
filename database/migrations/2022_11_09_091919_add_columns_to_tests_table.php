@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tests', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('shop');
-            $table->timestamps();
+        Schema::table('tests', function (Blueprint $table) {
+            $table->string('phone');
+            $table->string('email');
+            $table->string('address');
+            $table->string('location');
         });
     }
 
@@ -28,6 +28,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tests');
+        Schema::table('tests', function (Blueprint $table) {
+            //
+        });
     }
 };
