@@ -23,7 +23,13 @@
     {{-- Todo List --}}
     <ul style="display:flex;  flex-direction: column; justify-content: center; align-items: center;">
         @foreach ($todos as $todo)
-            <li style="border-bottom: 1px solid grey; padding-bottom: 0.4em;"> {{ $todo->id }} | {{ $todo->description }} <a href="#">Edit</a> <a href="#">Delete</a></li>
+            <li style="border-bottom: 1px solid grey; padding-bottom: 0.4em;"> {{ $todo->id }} | {{ $todo->description }} <a href="#">Edit</a> 
+                <form action="/todo/{{ $todo->id }}/delete" method="post">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" style="display:inline-block;">Delete</button>
+                </form>
+            </li>
         @endforeach
     </ul>
 </body>

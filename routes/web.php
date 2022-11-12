@@ -29,10 +29,10 @@ Route::get('about', [WelcomController::class, 'about']);
 
 Route::get('/todo', [App\Http\Controllers\TodoController::class, 'index']);
 Route::post('/todo/store', [App\Http\Controllers\TodoController::class, 'store']);
+Route::delete('/todo/{id}/delete', [App\Http\Controllers\TodoController::class, 'destroy']);
 
+// Request or Route
+// Controller 
 // View
-// Route
-// Controller
 
 // Model
-// Migration
