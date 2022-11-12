@@ -28,6 +28,22 @@ class TodoController extends Controller
         return view('todo.show', compact('todo'));
     }
 
+    public function edit($id)
+    {
+        $todo = Todo::find($id);
+        // dd($todo);
+        return view('todo.edit', compact('todo'));
+    }
+
+    public function update($id)
+    {
+        $todo = Todo::find($id);
+        // dd($todo, request()->all());
+        $todo->update(request()->all());
+        
+        return redirect('todo');
+    }
+
     public function destroy($id)
     {
         // $todo = Todo::find($id)->delete();

@@ -32,6 +32,8 @@ Route::get('/todo', [App\Http\Controllers\TodoController::class, 'index']);
 Route::post('/todo/store', [App\Http\Controllers\TodoController::class, 'store']);
 Route::delete('/todo/{id}/delete', [App\Http\Controllers\TodoController::class, 'destroy']);
 Route::get('/todo/{id}/show', [App\Http\Controllers\TodoController::class, 'show']);
+Route::get('todo/{id}/edit', [App\Http\Controllers\TodoController::class, 'edit']);
+Route::put('/todo/{id}/update', [App\Http\Controllers\TodoController::class, 'update']);
 
 // Request or Route
 // Controller 
