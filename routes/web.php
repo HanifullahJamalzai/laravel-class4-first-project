@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomController;
+
 // use App\Http\Controllers\TodoController;
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::get('about', [WelcomController::class, 'about']);
 Route::get('/todo', [App\Http\Controllers\TodoController::class, 'index']);
 Route::post('/todo/store', [App\Http\Controllers\TodoController::class, 'store']);
 Route::delete('/todo/{id}/delete', [App\Http\Controllers\TodoController::class, 'destroy']);
+Route::get('/todo/{id}/show', [App\Http\Controllers\TodoController::class, 'show']);
 
 // Request or Route
 // Controller 
