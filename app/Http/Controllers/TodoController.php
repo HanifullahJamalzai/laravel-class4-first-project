@@ -16,6 +16,9 @@ class TodoController extends Controller
 
     public function store()
     {
+        request()->validate([
+            'description' => 'required|min:4|max:255'
+        ]);
         $dataCameFromForm = request()->all();
         Todo::create(request()->all());
         // dd($dataCameFromForm);
@@ -40,7 +43,7 @@ class TodoController extends Controller
         $todo = Todo::find($id);
         // dd($todo, request()->all());
         $todo->update(request()->all());
-        
+
         return redirect('todo');
     }
 

@@ -8,17 +8,22 @@
 </head>
 <body>
     <h1 style="display:flex; justify-content: center; align-items: center;">Todo application</h1>
-
+            @error('description')
+                <p style="display:flex; justify-content: center; align-items: center; color: white; background: red;">{{ $message }}</p>
+            @enderror
     {{-- Form --}}
     <section>
+        
         <form action="/todo/store" method="post" style="display:flex; justify-content: center; align-items: center; padding: 1.5em;">
             @csrf
             {{-- @method('post') --}}
             {{-- <input type="hidden" value="{{ _token() }}"> --}}
             <input type="text" name="description" style="width: 50%; margin-right: 0.3em; border: none; border-bottom: 2px solid green; text-align: center;">
             <button type="submit">Submit</button>
+            
         </form>
     </section>
+            
 
     {{-- Todo List --}}
     <ul style="display:flex;  flex-direction: column; justify-content: center; align-items: center;">
